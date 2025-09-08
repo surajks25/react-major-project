@@ -2,6 +2,9 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import SevereColdIcon from '@mui/icons-material/SevereCold';
+import SunnyIcon from '@mui/icons-material/Sunny';
+import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
 import "./InfoBox.css";
 
 export default function InfoBox({ info }) {
@@ -19,12 +22,24 @@ export default function InfoBox({ info }) {
         <Card sx={{ maxWidth: 345 }}>
           <CardMedia
             sx={{ height: 140 }}
-            image={INIT_URL}
+            image={
+              info.humidity > 80
+                ? RAIN_URL 
+                : info.temp > 15
+                ? HOT_URL
+                : COLD_URL
+            }
             title="green iguana"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {info.city}
+              {info.city}{
+                info.humidity > 80 
+                ? <SevereColdIcon/> 
+                : info.temp > 15
+                ? <SunnyIcon/>
+                : <ThunderstormIcon/>
+              }
             </Typography>
             <Typography
               variant="body2"
