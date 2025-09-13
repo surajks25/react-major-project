@@ -1,5 +1,6 @@
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import SendIcon from '@mui/icons-material/Send';
 import "./SearchBox.css";
 import { useState } from "react";
 
@@ -62,10 +63,23 @@ export default function SearchBox({updateInfo}) {
         />
         <br></br>
         <br></br>
-        <Button variant="contained" type="submit">
-          Search
-        </Button>
-        {error && <p style={{color:"red"}}>no such place exist!</p>}
+       <Button
+  variant="outlined"
+  type="submit"
+  endIcon={<SendIcon />}
+  sx={{
+    color: "rgba(255, 255, 255, 0.34)",              
+    borderColor: "rgba(255, 255, 255, 0.34)",       
+    "&:hover": {
+      borderColor: "rgba(255, 255, 255, 0.54)",
+      backgroundColor: "rgba(255, 255, 255, 0.14)" 
+    }
+  }}
+>
+  Send
+</Button>
+
+        {error && <p style={{color:"red"}}>No such place exist!</p>}
       </form>
     </div>
   );

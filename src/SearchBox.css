@@ -2,3 +2,14 @@
 text-align: center;
 margin-bottom: 25px;
 }
+.MuiInputBase-input {
+  color: rgba(255, 255, 255, 0.34)!important;   
+}
+
+.MuiInputLabel-root {
+  color: rgba(255, 255, 255, 0.34)!important;  
+}
+
+.MuiOutlinedInput-root fieldset {
+  border-color: rgba(255, 255, 255, 0.34)!important;
+}
