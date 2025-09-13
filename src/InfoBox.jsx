@@ -33,13 +33,7 @@ export default function InfoBox({ info }) {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {info.city}{
-                info.humidity > 80 
-                ? <SevereColdIcon/> 
-                : info.temp > 15
-                ? <SunnyIcon/>
-                : <ThunderstormIcon/>
-              }
+              {info.city}
             </Typography>
             <Typography
               variant="body2"
